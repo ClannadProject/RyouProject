@@ -12,7 +12,7 @@ import java.util.List;
 
 public class InitializeClannadFileSystem {
 
-    private static final String[] ClannadDirectoryNames = new String[]{"Artist", "Album", "Product", ".new"};
+    private static final String[] ClannadDirectoryNames = new String[]{"Artist", "Album", "Product", "Event", ".new"};
 
     public static FileOperationResult initClannadFileSystem(String clannadBase) {
         FileOperationResult result = new FileOperationResult();
