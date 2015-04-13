@@ -2,9 +2,6 @@ package de.knoobie.project.ryou.filesystem.domain;
 
 import de.knoobie.project.clannadutils.common.FileUtils;
 import java.io.IOException;
-import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.nio.file.StandardWatchEventKinds;
@@ -22,6 +19,9 @@ public class RyouPath {
 
     public Path getPath() {
         return path;
+    }
+    public static RyouPath create(String startPath, String... folder) throws InvalidPathException {
+        return new RyouPath(FileUtils.getFileSystem().getPath(startPath, folder));
     }
 
     public static RyouPath create(String path) throws InvalidPathException {
